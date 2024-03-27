@@ -5,6 +5,25 @@ import java.util.Stack;
 public class Binary {
 
 
+    public static int binaryDecimal(String str){
+
+        int len = str.length();
+
+
+        int num = 0;
+
+        for(int i = len-1 ; i >= 0 ; i--){
+
+            if(str.charAt(i) == '1'){
+
+                num += (int) Math.pow(2, len - 1 - i);
+            }
+        }
+
+        return num;
+    }
+
+
     //convert decimal to binary
     public static String decimalBinary(int x){
 
@@ -32,6 +51,9 @@ public class Binary {
     public static void main(String[] args) {
 
         String str = decimalBinary(13);
-        System.out.println(str);
+        System.out.println("decimalBinary: " + str);
+
+        int val = binaryDecimal(str);
+        System.out.println("binaryDecimal: " + val);
     }
 }
